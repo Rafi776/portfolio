@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
+const isProd = process.env.NODE_ENV === "production";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+module.exports = {
+  output: "export", // Required for static hosting
+  basePath: "/portfolio", // Set to your repo name
+  assetPrefix: isProd ? "/portfolio/" : "",
 };
-
-export default nextConfig;
